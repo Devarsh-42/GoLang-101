@@ -2,47 +2,47 @@
 
 Welcome to Day-02 of my Go learning journey! This day focuses on mastering fundamental Go concepts and building a real-world project that ties everything together.
 
-## 📚 What I Learned
+## What I Learned
 
 ### Core Concepts Covered
 
-1. **Arrays** 📊
+1. **Arrays** 
    - Fixed-size collections
    - Array declaration and initialization
    - Array iteration
    - Default values
 
-2. **Slices** 🔪
+2. **Slices** 
    - Dynamic arrays
    - Slice operations (append, slicing)
    - Make and capacity
    - Slice manipulation
 
-3. **Structs** 🏗️
+3. **Structs** 
    - Custom data types
    - Struct methods
    - Struct composition
    - Pointer receivers
 
-4. **Loops** 🔄
+4. **Loops** 
    - For loops
    - While-like loops
    - Range loops
    - Break and continue
 
-5. **Interfaces** 🔌
+5. **Interfaces** 
    - Interface definition
    - Interface implementation
    - Polymorphism
    - Type assertions
 
-6. **Error Handling** ⚠️
+6. **Error Handling** 
    - Custom error types
    - Error wrapping
    - Error checking patterns
    - Validation errors
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Day-02/
@@ -70,19 +70,19 @@ Day-02/
         └── main.go             # Task Manager application demo
 ```
 
-## 🎯 Main Project: Task Manager
+## Main Project: Task Manager
 
 A comprehensive CLI-based task management system that demonstrates all learned concepts in action.
 
 ### Features
 
-✅ **User Management**
+**User Management**
 - Create users with roles and status
 - Active/Inactive user tracking
 - Duplicate email prevention
 - User listing and filtering
 
-✅ **Task Management**
+**Task Management**
 - Create, read, update, delete tasks
 - Task assignment to users
 - Priority levels (Low, Medium, High, Critical)
@@ -90,7 +90,7 @@ A comprehensive CLI-based task management system that demonstrates all learned c
 - Due date management
 - Tag-based organization
 
-✅ **Advanced Features**
+**Advanced Features**
 - Overdue task detection
 - Filter tasks by status, priority, or tags
 - Task statistics dashboard
@@ -125,7 +125,7 @@ A comprehensive CLI-based task management system that demonstrates all learned c
 └─────────────────────────────────────┘
 ```
 
-## 🚀 Running the Code
+## Running the Code
 
 ### Run Learning Examples
 
@@ -151,7 +151,7 @@ This runs a comprehensive demo showcasing:
 - Statistics generation
 - CRUD operations
 
-## 📖 Key Learnings
+## Key Learnings
 
 ### 1. Arrays vs Slices
 ```go
@@ -218,29 +218,29 @@ func GetTasksByStatus(status TaskStatus) []Task {
 }
 ```
 
-## 🎓 What This Project Teaches
+## What This Project Teaches
 
 ### Beginner Concepts
-- ✅ Working with arrays and slices
-- ✅ Creating and using structs
-- ✅ Loop patterns and iteration
-- ✅ Basic error handling
+- Working with arrays and slices
+- Creating and using structs
+- Loop patterns and iteration
+- Basic error handling
 
 ### Intermediate Concepts
-- ✅ Interface design and implementation
-- ✅ Custom error types
-- ✅ Pointer usage with structs
-- ✅ Package organization
-- ✅ Method receivers
+- Interface design and implementation
+- Custom error types
+- Pointer usage with structs
+- Package organization
+- Method receivers
 
 ### Advanced Patterns
-- ✅ Repository pattern (interfaces)
-- ✅ Error wrapping and handling
-- ✅ Data validation
-- ✅ Filtering and transformation
-- ✅ Statistics aggregation
+- Repository pattern (interfaces)
+- Error wrapping and handling
+- Data validation
+- Filtering and transformation
+- Statistics aggregation
 
-## 💡 Real-World Applications
+## Real-World Applications
 
 This task manager demonstrates patterns used in:
 - Project management tools (Jira, Trello)
@@ -250,7 +250,7 @@ This task manager demonstrates patterns used in:
 - Resource scheduling systems
 - ToDo applications
 
-## 📊 Demo Output Highlights
+## Demo Output Highlights
 
 The task manager demo showcases **17 different scenarios**:
 
@@ -272,14 +272,14 @@ The task manager demo showcases **17 different scenarios**:
 16. Error handling for missing entities
 17. Slice manipulation for deletion
 
-## 🔗 Next Steps
+## Next Steps
 
 After completing Day-02, I have a solid foundation in:
-- ✅ Go data structures (arrays, slices, structs)
-- ✅ Control flow (loops, conditionals)
-- ✅ Interface-based design
-- ✅ Error handling best practices
-- ✅ Package organization
+- Go data structures (arrays, slices, structs)
+- Control flow (loops, conditionals)
+- Interface-based design
+- Error handling best practices
+- Package organization
 
 **Coming Next**: Day-03 will likely cover:
 - Concurrency (goroutines, channels)
@@ -287,7 +287,7 @@ After completing Day-02, I have a solid foundation in:
 - Database integration
 - Testing and benchmarking
 
-## 📝 Notes
+## Notes
 
 - All code follows Go conventions and best practices
 - Custom error types provide meaningful error messages
@@ -301,4 +301,4 @@ After completing Day-02, I have a solid foundation in:
 **Module**: `day02`  
 **Go Version**: 1.25.5
 
-Happy Learning! 🎉
+Happy Learning! 
