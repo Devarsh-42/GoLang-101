@@ -1,5 +1,7 @@
 package learning
 
+import "fmt"
+
 // if statement
 func exampleIf() {
 	age := 18
@@ -9,12 +11,12 @@ func exampleIf() {
 }
 
 // if-else
-func exampleIfElse() {
+func ExampleIfElse() {
 	score := 75
 	if score >= 60 {
-		// pass
+		fmt.Println("THE STUDENT IS PASSEDDD!!!!!")
 	} else {
-		// fail
+		fmt.Println("THE STUDENT HAS FAILED!!!!!")
 	}
 }
 

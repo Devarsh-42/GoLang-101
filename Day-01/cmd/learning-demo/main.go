@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"day01/learning"
+)
 
 func main() {
 	fmt.Println("=== Go Learning Examples ===\n")
@@ -22,6 +26,9 @@ func main() {
 	} else {
 		fmt.Println("   Grade: C")
 	}
+	fmt.Println()
+
+	learning.ExampleIfElse()
 	fmt.Println()
 
 	// For loop
