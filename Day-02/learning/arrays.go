@@ -19,6 +19,13 @@ func ExampleArrays() {
 
 	fmt.Println("Flags array (default values):", flags)
 
+	// Array Slicing in Golang
+	arr := [3]int{20,30,40}
+	fmt.Println(arr[0:2]) // [1 2]
+	fmt.Println(arr[:2]) // [1 2]
+	fmt.Println(arr[2:]) // [3 4]
+	fmt.Println(arr[:]) // [1 2 3 4]
+
 	// Access and modify array elements
 	numbers[0] = 15
 
@@ -26,6 +33,20 @@ func ExampleArrays() {
 	for i, v := range numbers {
 		fmt.Printf("Index %d: Value %d\n", i, v)
 	}
+
+	// Array Comparision 
+	arr1 := [4]int{1, 2, 3, 4}
+	arr2 := [4]int{1, 2, 3, 4}
+	arr3 := [4]int{1, 2, 3, 5}
+	fmt.Println(arr1 == arr2) // true
+	fmt.Println(arr1 == arr3) // false
+
+
+	// Array Sorting in Golang
+
+	arr4 := [4]int{4, 3, 2, 1}
+    sort.Ints(arr4[:])
+    fmt.Println(arr4) // [1 2 3 4]
 
 	// Multi-dimensional array
 	var matrix [2][3]int = [2][3]int{
@@ -39,4 +60,9 @@ func ExampleArrays() {
 			fmt.Printf("matrix[%d][%d] = %d\n", i, j, matrix[i][j])
 		}
 	}
+
+	//pointer to array
+	var p *[5]int = &numbers
+	fmt.Println("Pointer to numbers array:", p)
+	
 }

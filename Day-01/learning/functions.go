@@ -74,7 +74,7 @@ func multiplier(factor int) func(int) int {
 	}
 }
 
-// variadic function
+// variadic function -> accepts variable number of arguments, returns their sum
 func sum(numbers ...int) int {
 	total := 0
 	for _, n := range numbers {
@@ -88,11 +88,11 @@ type Rectangle struct {
 	width, height int
 }
 
-func (r Rectangle) area() int {
+func (r Rectangle) area() int { // value receiver -> does not modify the struct
 	return r.width * r.height
 }
 
-// pointer receiver method
+// pointer receiver method -> modifies the struct, , where r *Rectangle is an input pointer to Rectangle & we can modify the original struct & factor is an integer input
 func (r *Rectangle) scale(factor int) {
 	r.width *= factor
 	r.height *= factor

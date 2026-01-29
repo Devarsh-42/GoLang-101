@@ -22,7 +22,7 @@ func deferFile() {
 	
 	// read file
 }
-
+ 
 // multiple defers execute in LIFO order (Last In, First Out)
 func multipleDeferLIFO() {
 	defer first()
