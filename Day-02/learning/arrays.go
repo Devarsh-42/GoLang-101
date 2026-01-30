@@ -1,6 +1,9 @@
 package learning
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 // Arrays example
 func ExampleArrays() {
@@ -45,8 +48,86 @@ func ExampleArrays() {
 	// Array Sorting in Golang
 
 	arr4 := [4]int{4, 3, 2, 1}
-    sort.Ints(arr4[:])
+    sort.Ints(arr4[:]) // ->function that sorts an array of integers in ascending order
     fmt.Println(arr4) // [1 2 3 4]
+
+	// Array Copy in Golang
+
+	// arr1 := [4]int{1, 2, 3, 4}
+	// arr2 := [4]int{5, 6, 7, 8}
+	// n := copy(arr2[:], arr1[:])
+	// fmt.Println(arr2) // [1 2 3 4]
+	// fmt.Println(n) // 4
+
+
+	// Array Contains in Golang
+
+	// arr := [4]int{1, 2, 3, 4}
+	// i := sort.Search(len(arr), func(i int) bool { return arr[i] >= 3 })
+	// if i < len(arr) && arr[i] == 3 {
+	// 	fmt.Println("found 3 at index", i) // found 3 at index 2
+	// }
+
+
+	// Array Reverse - 2 ways
+
+	// arr := [4]int{1, 2, 3, 4}
+	// for i, j := 0, len(arr)-1; i < j; i, j = i+1, j-1 {
+	//     arr[i], arr[j] = arr[j], arr[i]
+	// }
+	// fmt.Println(arr) // [4 3 2 1]
+
+	// 2nd way
+
+	// arr := [4]int{1, 2, 3, 4}
+	// sort.Sort(sort.Reverse(sort.IntSlice(arr[:])))
+	// fmt.Println(arr) // [4 3 2 1]
+
+
+	// Array of Slices -> slices is an array where each element is a slice
+	// var arr [2][]int
+
+	
+	// Array of Maps -> array of maps is one in which each element is a map
+	// var arr [2]map[string]int
+
+	// arr[0] = map[string]int{"a": 1, "b": 2}
+	// arr[1] = map[string]int{"c": 3, "d": 4}
+
+
+	// Array of Functions -> An array of functions is one where each element is a function.
+
+	// var arr [2]func(int) int
+
+	// arr[0] = func(x int) int {
+	//     return x * x
+	// }
+	// arr[1] = func(x int) int {
+	//     return x * x * x
+	// }
+
+
+	// Array of Pointers 
+	
+	// var arr [2]*int
+
+	// a := 1
+	// b := 2
+	// arr[0] = &a
+	// arr[1] = &b
+
+	// Array of Structs
+	
+	// type Person struct {
+	//     Name string
+	//     Age  int
+	// }
+
+	// var arr [2]Person
+
+	// arr[0] = Person{Name: "John", Age: 20}
+	// arr[1] = Person{Name: "Jane", Age: 21}
+
 
 	// Multi-dimensional array
 	var matrix [2][3]int = [2][3]int{
