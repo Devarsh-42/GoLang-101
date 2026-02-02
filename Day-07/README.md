@@ -38,6 +38,8 @@ func main() {
 - Use `time.Sleep()` or channels for synchronization
 - Multiple goroutines can run concurrently, managed by the Go scheduler
 
+![Goroutines Working](goroutines-working.png)
+
 ---
 
 ### 2. **Channels**
@@ -61,15 +63,7 @@ requestChannel <- "Hello from channel"
 msg := <-requestChannel
 ```
 
-**How Unbuffered Channels Work:**
-```
-Sender Goroutine          Channel          Receiver Goroutine
-      |                      |                      |
-      |------ send --------->|                      |
-      |    (blocks)          |                      |
-      |                      |<----- receive -------|
-      |    (unblocks)        |                      |
-```
+![Unbuffered Channel Working](unbuffered-channel-working.png)
 
 #### **Buffered Channels**
 - Has a capacity to hold values
@@ -185,7 +179,7 @@ for squaredNum := range squaredChan {
 }
 ```
 
-![Pipeline Working](https://miro.medium.com/v2/resize:fit:1400/1*8qBqyo8WW0gu6pzwCBwT_w.png)
+![Pipeline Working](pipline-working.png)
 
 **Key Points:**
 - Each stage performs a specific transformation
