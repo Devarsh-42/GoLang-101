@@ -36,8 +36,7 @@ func main() {
 - Goroutines are extremely cheap (only ~2KB of stack space initially)
 - The main goroutine must wait for other goroutines to complete, or they'll be terminated when main exits
 - Use `time.Sleep()` or channels for synchronization
-
-![Goroutines Working](https://miro.medium.com/v2/resize:fit:1400/1*NFojvBkdPkoemSZ6binLbQ.png)
+- Multiple goroutines can run concurrently, managed by the Go scheduler
 
 ---
 
@@ -62,7 +61,15 @@ requestChannel <- "Hello from channel"
 msg := <-requestChannel
 ```
 
-![Unbuffered Channel](https://miro.medium.com/v2/resize:fit:1400/1*gRHIPhVUiKGx2MQB0e7Kmg.png)
+**How Unbuffered Channels Work:**
+```
+Sender Goroutine          Channel          Receiver Goroutine
+      |                      |                      |
+      |------ send --------->|                      |
+      |    (blocks)          |                      |
+      |                      |<----- receive -------|
+      |    (unblocks)        |                      |
+```
 
 #### **Buffered Channels**
 - Has a capacity to hold values
@@ -164,7 +171,13 @@ go func() {
         squaredChan <- num * num
     }
     close(squaredChan)
-}()
+**Pipeline Flow:**
+```
+Stage 1              Stage 2              Stage 3
+Generate  ------>   Square    ------>   Print
+Numbers   chan1     Numbers    chan2    Results
+(1,2,3,4,5)        (1,4,9,16,25)       (output)
+```
 
 // Stage 3: Print the squared numbers
 for squaredNum := range squaredChan {
