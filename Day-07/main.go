@@ -128,4 +128,18 @@ func main() {
 	for squaredNum := range squaredChan {
 		fmt.Println("Squared Number:", squaredNum)
 	}
+
+	manav := &str{"Hello"}
+	defer manav.p()
+	manav.s = "World"
+	fmt.Println(manav.s)
+	panic("O no!")
+}
+
+type str struct {
+	s string
+}
+
+func (s *str) p() {
+	fmt.Println(s.s);
 }
