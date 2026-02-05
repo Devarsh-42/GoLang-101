@@ -17,14 +17,14 @@ goroutines to finish executing. It's the standard way to wait for multiple
 concurrent operations to complete.
 
 Key Methods:
-- Add(delta int): Add delta to the WaitGroup counter
-- Done(): Decrement the counter by 1 (same as Add(-1))
-- Wait(): Block until counter becomes 0
+	- Add(delta int): Add delta to the WaitGroup counter
+	- Done(): Decrement the counter by 1 (same as Add(-1))
+	- Wait(): Block until counter becomes 0
 
 How it works:
-1. Main goroutine calls Add(n) to set counter to n
-2. Spawn n goroutines, each calls Done() when finished
-3. Main goroutine calls Wait() to block until counter reaches 0
+	1. Main goroutine calls Add(n) to set counter to n
+	2. Spawn n goroutines, each calls Done() when finished
+	3. Main goroutine calls Wait() to block until counter reaches 0
 
 Benefits:
 - Simple and safe goroutine synchronization
@@ -40,12 +40,14 @@ Use Cases:
 - Worker pool coordination
 
 Best Practices:
-1. Call Add() before starting goroutines (avoid race conditions)
-2. Call Done() with defer to ensure it's always called
-3. Don't pass WaitGroup by value (use pointer)
-4. Don't Wait() inside the same goroutine that calls Done()
-5. Counter must not go negative (will panic)
-6. Don't reuse WaitGroup until all Wait() calls return
+	1. Call Add() before starting goroutines (avoid race conditions)
+	2. Call Done() with defer to ensure it's always called
+	3. Don't pass WaitGroup by value (use pointer)
+	4. Don't Wait() inside the same goroutine that calls Done()
+	5. Counter must not go negative (will panic)
+	6. Don't reuse WaitGroup until all Wait() calls return
+	7. A WaitGroup is passed by reference because copying it creates independent counters, breaking synchronization.
+	   (All goroutines must operate on the same shared state)
 */
 
 // ============================================================================
@@ -108,7 +110,7 @@ func processJob(id int, wg *sync.WaitGroup, results chan<- JobResult) {
 
 func demoWaitGroupWithResults() {
 	fmt.Println("\n📌 WaitGroup with Result Collection")
-	fmt.Println("-" * 40)
+	fmt.Println("-", *40)
 
 	var wg sync.WaitGroup
 	numJobs := 6

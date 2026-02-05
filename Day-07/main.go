@@ -104,12 +104,11 @@ func main() {
 		fmt.Println("No messages received")
 	}
 
-
 	// Pipline example
 	fmt.Println("\n--- Pipeline Example ---")
 	numbersChan := make(chan int)
 	squaredChan := make(chan int)
-	
+
 	// Stage 1: Generate numbers
 	go func() {
 		for i := 1; i <= 5; i++ {
@@ -130,7 +129,7 @@ func main() {
 	}
 
 	manav := &str{"Hello"}
-	defer manav.p()
+	defer recover()
 	manav.s = "World"
 	fmt.Println(manav.s)
 	panic("O no!")
@@ -141,5 +140,5 @@ type str struct {
 }
 
 func (s *str) p() {
-	fmt.Println(s.s);
+	fmt.Println(s.s)
 }
