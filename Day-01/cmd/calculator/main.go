@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-
 	"day01/internal/calculator"
 )
 
@@ -15,7 +14,7 @@ func main() {
 }
 
 func run() error {
-	a, b := 10, 5
+	a, b := 10, 5 
 
 	sum := calculator.Add(a, b)
 	fmt.Printf("%d + %d = %d\n", a, b, sum)
@@ -36,6 +35,5 @@ func run() error {
 	if err != nil {
 		fmt.Printf("%d / 0 = error: %v\n", a, err)
 	}
-
 	return nil
 }
