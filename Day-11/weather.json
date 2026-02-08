@@ -1,0 +1,37 @@
+{
+  "location": {
+    "name": "Mumbai",
+    "region": "Maharashtra",
+    "country": "India",
+    "lat": 19.076,
+    "lon": 72.8777,
+    "tz_id": "Asia/Kolkata",
+    "localtime_epoch": 0,
+    "localtime": "2026-02-09 12:00"
+  },
+  "current": {
+    "last_updated": "",
+    "temp_c": 32,
+    "temp_f": 89.6,
+    "is_day": 0,
+    "condition": {
+      "text": "Partly cloudy",
+      "icon": "",
+      "code": 0
+    },
+    "wind_mph": 0,
+    "wind_kph": 12.5,
+    "wind_degree": 0,
+    "wind_dir": "SW",
+    "pressure_mb": 1010,
+    "precip_mm": 0,
+    "humidity": 70,
+    "cloud": 40,
+    "feelslike_c": 35,
+    "feelslike_f": 0,
+    "vis_km": 8,
+    "uv": 6,
+    "gust_mph": 0,
+    "gust_kph": 0
+  }
+}
