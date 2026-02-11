@@ -142,3 +142,7 @@ type str struct {
 func (s *str) p() {
 	fmt.Println(s.s)
 }
+
+
+// prod-consumer -> worker pool pattern -> struct -> waitgroup with result collection -> stor in imemory cache -> context with timeout and cancellation
+// implmemt graceful shutdown of goroutines -> error handling in goroutines -> sync package (mutex, rwmutex, once) -> channels with select statement -> pipelines with channels

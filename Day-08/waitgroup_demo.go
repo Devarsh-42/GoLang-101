@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"sync"
 	"time"
 )
@@ -54,7 +55,7 @@ Best Practices:
 // BASIC WAITGROUP USAGE
 // ============================================================================
 
-func worker(id int, wg *sync.WaitGroup) {
+func wgWorker(id int, wg *sync.WaitGroup) {
 	defer wg.Done() // Ensure Done() is called even if panic occurs
 
 	fmt.Printf("Worker %d: Starting\n", id)
@@ -64,7 +65,7 @@ func worker(id int, wg *sync.WaitGroup) {
 
 func demoBasicWaitGroup() {
 	fmt.Println("\n📌 Basic WaitGroup Usage")
-	fmt.Println("-" * 40)
+	fmt.Println(strings.Repeat("-", 40))
 
 	var wg sync.WaitGroup
 	numWorkers := 5
@@ -73,7 +74,7 @@ func demoBasicWaitGroup() {
 
 	for i := 1; i <= numWorkers; i++ {
 		wg.Add(1) // Increment counter before starting goroutine
-		go worker(i, &wg)
+		go wgWorker(i, &wg)
 	}
 
 	fmt.Println("Main: Waiting for workers to finish...")
@@ -110,7 +111,7 @@ func processJob(id int, wg *sync.WaitGroup, results chan<- JobResult) {
 
 func demoWaitGroupWithResults() {
 	fmt.Println("\n📌 WaitGroup with Result Collection")
-	fmt.Println("-", *40)
+	fmt.Println(strings.Repeat("-", 40))
 
 	var wg sync.WaitGroup
 	numJobs := 6
@@ -176,7 +177,7 @@ func task(id int, wg *sync.WaitGroup) {
 
 func demoNestedWaitGroups() {
 	fmt.Println("\n📌 Nested WaitGroups")
-	fmt.Println("-" * 40)
+	fmt.Println(strings.Repeat("-", 40))
 
 	var wg sync.WaitGroup
 	numTasks := 2
@@ -207,7 +208,7 @@ func dynamicWorker(id int, jobs <-chan int, wg *sync.WaitGroup) {
 
 func demoDynamicGoroutines() {
 	fmt.Println("\n📌 Dynamic Goroutines with WaitGroup")
-	fmt.Println("-" * 40)
+	fmt.Println(strings.Repeat("-", 40))
 
 	var wg sync.WaitGroup
 	jobs := make(chan int, 10)
@@ -236,9 +237,9 @@ func demoDynamicGoroutines() {
 // COMMON MISTAKE: Counter going negative (DEMO ONLY - DON'T DO THIS)
 // ============================================================================
 
-func demoCommonMistakes() {
+func demoWaitGroupCommonMistakes() {
 	fmt.Println("\n📌 Common Mistakes to Avoid")
-	fmt.Println("-" * 40)
+	fmt.Println(strings.Repeat("-", 40))
 
 	fmt.Println("\n⚠ Mistake 1: Calling Add() inside goroutine")
 	fmt.Println("   Problem: Race condition - Wait() might be called before Add()")
@@ -277,9 +278,9 @@ func processFile(file FileTask, wg *sync.WaitGroup, results chan<- string) {
 	results <- fmt.Sprintf("%s processed successfully", file.Filename)
 }
 
-func demoPracticalExample() {
+func demoWgPracticalExample() {
 	fmt.Println("\n📌 Practical Example: Parallel File Processing")
-	fmt.Println("-" * 40)
+	fmt.Println(strings.Repeat("-", 40))
 
 	files := []FileTask{
 		{"document1.txt", 100},
@@ -323,16 +324,16 @@ func demoPracticalExample() {
 
 // DemoWaitGroup demonstrates all WaitGroup patterns
 func DemoWaitGroup() {
-	fmt.Println("\n" + "="*60)
+	fmt.Println("\n" + strings.Repeat("=", 60))
 	fmt.Println("sync.WaitGroup DEMONSTRATION")
-	fmt.Println("="*60 + "\n")
+	fmt.Println(strings.Repeat("=", 60) + "\n")
 
 	demoBasicWaitGroup()
 	demoWaitGroupWithResults()
 	demoNestedWaitGroups()
 	demoDynamicGoroutines()
-	demoCommonMistakes()
-	demoPracticalExample()
+	demoWaitGroupCommonMistakes()
+	demoWgPracticalExample()
 
 	fmt.Println("\n✅ WaitGroup demonstration completed!")
 	fmt.Println("\nKey Takeaways:")
