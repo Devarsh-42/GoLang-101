@@ -3,6 +3,7 @@ package main
 import (
 	"day02/learning"
 	"fmt"
+	"runtime"
 )
 
 func main() {
@@ -37,4 +38,6 @@ func main() {
 	// Loops Examples
 	fmt.Println("\n7. Loops:")
 	learning.ExampleLoops()
+	runtime.GC()
+
 }

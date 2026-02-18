@@ -18,7 +18,7 @@ func StartWorkers(ctx context.Context, numWorkers int, fetchResults <-chan model
 		go worker(ctx, i, fetchResults, processResults, &wg)
 	}
 
-	go func() { 
+	go func() { // 
 		wg.Wait()
 		close(processResults)
 		fmt.Println("Processor: all workers done.")

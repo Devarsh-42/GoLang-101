@@ -35,7 +35,7 @@ func ExampleSlices() {
 	}
 
 	// Efficient approach
-	result2 := make([]int, 0, 1000)  // Preallocate capacity
+	result2 := make([]int, 0, 1000)  // Preallocate capacity, syntax: make([]T, length, capacity)
 	for i := 0; i < 1000; i++ {
 		result2 = append(result2, i)  // Minimal reallocation
 	}
