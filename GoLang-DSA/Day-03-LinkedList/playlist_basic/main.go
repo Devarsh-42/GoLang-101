@@ -75,8 +75,6 @@ type Playlist struct {
 	Size int
 }
 
-
-
 func fmtDuration(d float32) string {
 	t := int(d)
 	return fmt.Sprintf("%d:%02d", t/60, t%60)
